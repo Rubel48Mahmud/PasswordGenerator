@@ -24,21 +24,116 @@
       --secondary-text: #0f172a;
     }
 
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;transition:0.3s;}
-    .card{width:100%;max-width:420px;background:var(--card-bg);border-radius:12px;padding:20px;box-shadow:0 8px 24px rgba(0,0,0,0.5);transition:0.3s;}
-    h1{margin:0 0 16px 0;font-size:20px;text-align:center}
-    .output{width:93%;padding:12px;border-radius:8px;background:var(--bg);border:1px solid var(--secondary-bg);font-size:16px;overflow-wrap:anywhere;text-align:center;margin-bottom:12px}
-    .controls{margin-top:16px;display:flex;flex-direction:column;gap:12px}
-    .options{display:flex;flex-direction:column;gap:8px;margin-bottom:12px}
-    label{display:flex;align-items:center;gap:8px;font-size:14px}
-    input[type=checkbox]{width:16px;height:16px}
-    .range-wrap{display:flex;align-items:center;gap:8px;margin:8px 0}
-    input[type=range]{flex:1}
-    .btns{display:flex;gap:8px}
-    button{flex:1;background:var(--btn-bg);border:none;color:var(--btn-text);font-weight:600;padding:10px;border-radius:8px;cursor:pointer;transition:0.3s;}
-    button.secondary{background:var(--secondary-bg);color:var(--secondary-text)}
-    footer{text-align:center;margin-top:16px;font-size:13px;color:#94a3b8}
-    .pm{background:var(--secondary-bg);color:var(--secondary-text);width:28px;height:28px;border:none;border-radius:6px;cursor:pointer}
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start; /* কার্ড উপরে তোলা */
+      justify-content: center;
+      padding: 20px;
+      padding-top: 40px; /* উপরের স্পেস কিছুটা */
+      transition: 0.3s;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: var(--card-bg);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+      transition: 0.3s;
+    }
+
+    h1 {
+      margin: 0 0 16px 0;
+      font-size: 20px;
+      text-align: center;
+    }
+
+    .output {
+      width: 93%;
+      padding: 12px;
+      border-radius: 8px;
+      background: var(--bg);
+      border: 1px solid var(--secondary-bg);
+      font-size: 16px;
+      overflow-wrap: anywhere;
+      text-align: center;
+      margin-bottom: 12px;
+    }
+
+    .controls {
+      margin-top: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .options {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+
+    label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+    }
+
+    input[type=checkbox] {
+      width: 16px;
+      height: 16px;
+    }
+
+    .range-wrap {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin: 8px 0;
+    }
+
+    input[type=range] {
+      flex: 1;
+    }
+
+    .btns {
+      display: flex;
+      gap: 8px;
+    }
+
+    button {
+      flex: 1;
+      background: var(--btn-bg);
+      border: none;
+      color: var(--btn-text);
+      font-weight: 600;
+      padding: 10px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button.secondary {
+      background: var(--secondary-bg);
+      color: var(--secondary-text);
+    }
+
+    .pm {
+      background: var(--secondary-bg);
+      color: var(--secondary-text);
+      width: 28px;
+      height: 28px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
 
     /* Small toggle button top-right */
     #modeToggle {
@@ -53,21 +148,37 @@
       color: var(--secondary-text);
       cursor: pointer;
       font-size: 16px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      transition:0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s;
     }
 
     /* Strength Meter */
-    .strength-wrap {margin-top:12px;}
+    .strength-wrap {
+      margin-top: 12px;
+    }
+
     .strength-bar {
-      width:100%;height:8px;border-radius:6px;background:#334155;overflow:hidden;
+      width: 100%;
+      height: 8px;
+      border-radius: 6px;
+      background: #334155;
+      overflow: hidden;
     }
+
     .strength-fill {
-      height:100%;width:0;background:red;transition:0.3s;
+      height: 100%;
+      width: 0;
+      background: red;
+      transition: 0.3s;
     }
-    .strength-text {font-size:13px;margin-top:4px;text-align:center;}
+
+    .strength-text {
+      font-size: 13px;
+      margin-top: 4px;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
@@ -102,10 +213,6 @@
       <button id="generateBtn">Generate</button>
       <button id="copyBtn" class="secondary">Copy</button>
     </div>
-
-    <footer>
-      developed by <a href="https://www.facebook.com/share/1BEfm8XqoR/" target="_blank" style="color:#06b6d4;text-decoration:none">Rubel Mahmud</a>
-    </footer>
   </main>
 
   <script>
@@ -199,7 +306,6 @@
       if (!pw.includes("Select")) checkStrength(pw);
     });
 
-    // ✅ Copy function with fallback
     async function copyCurrent(){
       const text = out.textContent;
       if (!text || text.includes('Select at least')) return;
@@ -224,7 +330,6 @@
     }
     copyBtn.addEventListener('click', copyCurrent);
 
-    // Mode toggle
     modeToggle.addEventListener('click', () => {
       document.body.classList.toggle('light');
       modeToggle.textContent = document.body.classList.contains('light') ? "🌙" : "☀️";
